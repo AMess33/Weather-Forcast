@@ -23,10 +23,14 @@ searchEl.addEventListener('click', Event => {
       return
    }   
    var weatherUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchCityVal + '&limit=1&appid=ef319315baa0199063683f91eaf8539b';
+   console.log(weatherUrl);
+   geoLocate(weatherUrl);
+});
 // fetch longitude and latitude X
    // save lon and lat to variables X
       // create new api call with lon and lat X
-   fetch(weatherUrl)
+function geoLocate(url){
+      fetch(url)
 .then(function (response){
    return response.json();
 })
@@ -36,9 +40,25 @@ searchEl.addEventListener('click', Event => {
       var longitude = (data[i].lon);
       console.log(latitude);
       console.log(longitude);
-      var forcastUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=ef319315baa0199063683f91eaf8539b';
-      console.log(forcastUrl);
+      var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=ef319315baa0199063683f91eaf8539b&units=imperial&cnt=1';
+      console.log(forecastUrl);
+      getForecast(forecastUrl);
    }
 })
-});
-    
+};
+   //  fetch weather api from forcastURL
+      // save weather data into variables
+         // append variables to html page
+function getForecast(url){
+      fetch(url)
+.then (function (response){
+      return response.json();
+})
+.then(function (data) {
+   for (var i = 0; i < data.lenth; i++) {
+      var temperature = (data[i].list.main.temp);
+      console.log(temperature);
+         // var temperature = (data[i].);
+   }
+})
+}

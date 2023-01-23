@@ -51,11 +51,11 @@ function geoLocate(url){
          // append variables to html page
 function getForecast(url){
       fetch(url)
-.then (function (response){
+.then(function (response){
       return response.json();
 })
 .then(function (data) {
-   for (var i = 0; i < data.lenth; i++) {
+   for (var i = 0; i < data.length; i++) {
       var temperature = (data[i].list.main.temp);
       console.log(temperature);
          // var temperature = (data[i].);

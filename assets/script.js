@@ -55,8 +55,8 @@ function getForecast(url){
       return response.json();
 })
 .then(function (data) {
-   for (var i = 0; i < data.length; i++) {
-      var temperature = (data[i].list.main.temp);
+   for (var i = 0; i < data.list.length; i++) {
+      var temperature = (data.list[i].main.temp);
       console.log(temperature);
          // var temperature = (data[i].);
    }

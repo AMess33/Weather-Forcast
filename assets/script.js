@@ -4,9 +4,6 @@ $(function () {
    var today = dayjs();
    $('#todaysDate').text(today.format('dddd, MMMM D'))
 });
-//  event listener for form submit X
-// create api call from form submit city info
-// call api to get longitude and latitude of city
 
 // add event listener X
    // get value from input and place in variable X
@@ -46,7 +43,7 @@ function geoLocate(url){
    }
 })
 };
-   //  fetch weather api from forcastURL
+   //  fetch weather api from forcastURL X
       // save weather data into variables
          // append variables to html page
 function getForecast(url){
@@ -58,7 +55,6 @@ function getForecast(url){
    for (var i = 0; i < data.list.length; i++) {
       var temperature = (data.list[i].main.temp);
       console.log(temperature);
-         // var temperature = (data[i].);
    }
 })
 }

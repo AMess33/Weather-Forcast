@@ -22,7 +22,7 @@ searchEl.addEventListener('click', Event => {
       alert('You must enter a city name');
       return
    }   
-   var weatherUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchCityVal + '&limit=1&appid=ef319315baa0199063683f91eaf8539b';
+   var weatherUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchCityVal + '&limit=1&appid=ef319315baa0199063683f91eaf8539b';
    console.log(weatherUrl);
    geoLocate(weatherUrl);
 });
@@ -38,15 +38,15 @@ function geoLocate(url){
    for (var i = 0; i < data.length; i++) {
       var latitude = (data[i].lat);
       var longitude = (data[i].lon);
-      var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=ef319315baa0199063683f91eaf8539b&units=imperial&cnt=1';
+      var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=ef319315baa0199063683f91eaf8539b&units=imperial&cnt=1';
       console.log(forecastUrl);
       getForecast(forecastUrl);
    }
 })
 };
    //  fetch weather api from forcastURL X
-      // save weather data into variables
-         // append variables to html page
+      // save weather data into variables X
+         // append variables to html page X
 function getForecast(url){
       fetch(url)
 .then(function (response){
@@ -68,15 +68,7 @@ function getForecast(url){
       currentHumid.textContent = "Humidity: " + humidity + '%';
 
       conditions.append(currentTemp, currentWind, currentHumid);
-      // var img = document.createElement('img');
-      // var listEl = document.createElement('li');
-      // img.src = 'http://openweathermap.org/img/wn/' + (data.list[i].weather[0].icon) + '@2x.png';
-      // currentWeather.textContent = temperature + ' degrees with ' + .toUpperCase();
-      // document.getElementById('city').appendChild(img);
-      // listEl.textContent = 'Temp:' + temperature;
-      // document.getElementById('conditions').appendChild(listEl);
-      // // document.getElementById('city').appendChild(listEl)
-
+   
    }
 )
 }

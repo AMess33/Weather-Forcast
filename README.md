@@ -15,6 +15,6 @@
 [Weather Forecast Webpage](https://amess33.github.io/Weather-Forcast/)
 
 When you open the page you will see a search bar. Enter a city you wish to search for and hit the Search button. 
-![Weather Forecast home page]()
+![Weather Forecast home page](./assets/images/Screenshot%202023-01-25%20at%2012.01.43%20AM%20(2).png)
 
 Once the button has been hit your page will populate with the current and future weather forecast for that city. 
